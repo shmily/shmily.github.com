@@ -19,10 +19,11 @@ Raspberry-Pi 上运行的是自己编译的 `linux-3.2` + `build-root`，默认�
 
 vim 需要用到`libncurses.so`这个链接库，需要先行编译。  
 
-* 下载 ncurses-5.9.tar.gz
+*	下载 ncurses-5.9.tar.gz
 	
 
-* 配置
+
+*	配置
 	
 		./configure \
 		CC=arm-bcm2708hardfp-linux-gnueabi-gcc \
@@ -33,7 +34,8 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 		--prefix=$(pwd)/_install
 	
 
-* 编译
+
+*	编译
 		
 		make HOSTCC=gcc CXX=arm-bcm2708hardfp-linux-gnueabi-c++ && make install
 
@@ -60,10 +62,11 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 ## vim-7.3 移植
 	
 
-* 下载 vim-7.3.tar.bz2
+*	下载 vim-7.3.tar.bz2
 	
 
-* 配置
+
+*	配置
 		
 		./configure \
 		--with-features=normal \
@@ -87,7 +90,8 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 		fall-back for $VIM: "/usr/tools/share/vim"
 	
 
-* 编译
+
+*	编译
 	
 		make CC=arm-bcm2708hardfp-linux-gnueabi-gcc
 		make STRIP=arm-bcm2708hardfp-linux-gnueabi-strip install
@@ -95,7 +99,8 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 	对输出文件进行 strip 操作，删除不必要的信息（符号信息，调试信息），能有效减少文件大小。
 
 
-* 安装
+
+*	安装
 	
 	拷贝  /usr/tools 到目标板上，同时把 libncurses.so 拷贝到目标板的 /usr/lib 上，vim就可以在目标板运行。
 
@@ -103,7 +108,8 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 	需要继续努力啊~
 
 
-* 配置
+
+*	配置
 	
 	建立 ~/.vimrc 文件，这个是vim启动时读取的配置文件，我们使用vim的默认模板创建
 
