@@ -23,7 +23,7 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 	
 
 * 配置
-
+	
 		./configure \
 		CC=arm-bcm2708hardfp-linux-gnueabi-gcc \
 		--host=arm-linux \
@@ -32,7 +32,7 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 		--with-shared \
 		--prefix=$(pwd)/_install
 	
-	
+
 * 编译
 		
 		make HOSTCC=gcc CXX=arm-bcm2708hardfp-linux-gnueabi-c++ && make install
@@ -94,7 +94,7 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 
 	对输出文件进行 strip 操作，删除不必要的信息（符号信息，调试信息），能有效减少文件大小。
 
-	
+
 * 安装
 	
 	拷贝  /usr/tools 到目标板上，同时把 libncurses.so 拷贝到目标板的 /usr/lib 上，vim就可以在目标板运行。
@@ -102,9 +102,9 @@ vim 需要用到`libncurses.so`这个链接库，需要先行编译。
 	但是，现在依然是没有语法高亮的功能~~~ （^..^）  
 	需要继续努力啊~
 
-	
-* 配置
 
+* 配置
+	
 	建立 ~/.vimrc 文件，这个是vim启动时读取的配置文件，我们使用vim的默认模板创建
 
 		 cp /usr/tools/share/vim/vim73/vimrc_example.vim ~/.vimrc
